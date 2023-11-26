@@ -17,7 +17,8 @@ To use the compiled libpyo3impl.so in a Python program, rename it to pyo3impl.so
     import pyo3impl
 
 From there, you can invoke the Rust-implemented functions directly in Python.
-Functionality
+
+### Functionality
 
 The shared library includes the following functionalities:
 

@@ -29,5 +29,7 @@ Dependencies
 
     Rust
     PyO3
-    SQLx for Rust
+    SQLx
     SQLite
+    Tokio
+    Uuid not implemented

@@ -1,4 +1,5 @@
 import pyo3impl
+from uuid import uuid4
 
 pyo3impl.create_database_sync()
 pyo3impl.insert_data_sync("2", "HELLO WORLD")

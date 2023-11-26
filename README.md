@@ -1,10 +1,6 @@
 # FEMTORUST
 
-This repository contains a Rust project that demonstrates the integration of Rust code into a Python application using PyO3. The `pyo3impl` directory includes the Rust source code, which is compiled into a shared object library that can be imported into Python programs.
-
-## pyo3impl
-
-The `pyo3impl` shared object (`pyo3impl.so`) is the compiled result of the PyO3 implementation, allowing Rust functions to be called from Python. This shared library is the bridge between Rust and Python in this project, enabling the execution of high-performance Rust code within a Python environment.
+This repository contains a Rust project that demonstrates the integration of Rust code into a Python application using PyO3. The `pyo3impl` shared object (`pyo3impl.so`) is the compiled result of the PyO3 implementation, allowing Rust functions to be called from Python. This shared library is the bridge between Rust and Python in this project, enabling the execution of high-performance Rust code within a Python environment.
 
 ### Building
 

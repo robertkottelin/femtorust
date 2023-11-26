@@ -1,5 +1,4 @@
 use sqlx::{sqlite::SqlitePoolOptions, Pool, Sqlite, Row};
-use uuid::Uuid;
 
 async fn create_database(pool: &Pool<Sqlite>) -> Result<(), sqlx::Error> {
     sqlx::query(
@@ -36,10 +35,11 @@ async fn get_value_by_id(pool: &Pool<Sqlite>, id: &str) -> Result<String, sqlx::
     Ok(value)
 }
 
-
 #[tokio::main]
 async fn main() -> Result<(), sqlx::Error> {
-    let database_url = format!("sqlite:database_{}.db", Uuid::new_v4().to_string());
+
+    let database_url = "sqlite:femtorust.db";
+
     let pool = SqlitePoolOptions::new().connect(&database_url).await?;
 
     create_database(&pool).await?;

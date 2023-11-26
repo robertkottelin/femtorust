@@ -10,7 +10,7 @@ The `pyo3impl` shared object (`pyo3impl.so`) is the compiled result of the PyO3 
 
 To build the shared object file, navigate to the `pyo3impl` directory and run:
 
-cargo build --release
+    cargo build --release
 
 This will compile the Rust code into a shared object file located at target/release/libpyo3impl.so.
 
@@ -18,7 +18,7 @@ This will compile the Rust code into a shared object file located at target/rele
 
 To use the compiled libpyo3impl.so in a Python program, rename it to pyo3impl.se and/or ensure it is in the same directory as your Python script or in a directory listed in your PYTHONPATH. You can then import the module in Python as follows:
 
-import pyo3impl
+    import pyo3impl
 
 From there, you can invoke the Rust-implemented functions directly in Python.
 Functionality

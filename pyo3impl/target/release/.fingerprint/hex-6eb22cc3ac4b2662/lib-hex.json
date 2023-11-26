@@ -1,0 +1,1 @@
+{"rustc":1495599605654839978,"features":"[\"alloc\", \"default\", \"std\"]","target":2806462642998046779,"profile":17701843952456672490,"path":6840793509394535892,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/hex-6eb22cc3ac4b2662/dep-lib-hex"}}],"rustflags":[],"metadata":14751499657425910276,"config":2202906307356721367,"compile_kind":0}

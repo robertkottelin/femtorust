@@ -1,4 +1,6 @@
 use sqlx::{sqlite::SqlitePoolOptions, Pool, Sqlite, Row};
+use std::time::Instant;
+
 
 async fn create_database(pool: &Pool<Sqlite>) -> Result<(), sqlx::Error> {
     sqlx::query(
@@ -37,16 +39,26 @@ async fn get_value_by_id(pool: &Pool<Sqlite>, id: &str) -> Result<String, sqlx::
 
 #[tokio::main]
 async fn main() -> Result<(), sqlx::Error> {
-
     let database_url = "sqlite:femtorust.db";
-
     let pool = SqlitePoolOptions::new().connect(&database_url).await?;
-
     create_database(&pool).await?;
-    insert_data(&pool, "1", "HELLO WORLD").await?;
 
-    let value = get_value_by_id(&pool, "1").await?;
-    println!("The value was {}", value);
+    let start = Instant::now();
+
+    for i in 1..=1000 {
+        let id = i.to_string();
+        let value = format!("HELLO WORLD {}", i);
+        insert_data(&pool, &id, &value).await?;
+    }
+
+    for i in 1..=1000 {
+        let id = i.to_string();
+        let value = get_value_by_id(&pool, &id).await?;
+        println!("Value for ID {} is {}", i, value);
+    }
+
+    let duration = start.elapsed();
+    println!("Total execution time: {:?}", duration);
 
     Ok(())
 }

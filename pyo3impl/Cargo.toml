@@ -10,7 +10,7 @@ name = "pyo3impl"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = { version = "0.15", features = ["extension-module"] }
+pyo3 = { version = "0.20", features = ["extension-module"] }
 tokio = { version = "1", features = ["full"] }
 sqlx = { version = "0.6", features = ["sqlite", "runtime-tokio-rustls"] }
 uuid = { version = "1", features = ["v4"] }
